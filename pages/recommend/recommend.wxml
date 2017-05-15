@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="content">
+  <swiper indicator-dots="true" autoplay="false" style="width:100%" circular="{{circular}}" indicator-color="rgba(255,255,255,.8)" indicator-active-color="#be0b0b">
+    <block wx:for="{{sliderlist}}" wx:for-item="item">
+      <swiper-item>
+        <image src="{{item.picUrl}}" mode="widthFix" style="width:100%;height:100%" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="recommend">
+    <view class="radioTitle">
+      <text>热门电台</text>
+    </view>
+    <view class="list">
+      <block wx:for="{{radioList}}" wx:for-item="item">
+        <view class="radioItem">
+          <view class="cover">
+            <image src="{{item.picUrl}}" mode="widthFix" class="img" />
+          </view>
+          <view class="title">{{item.Ftitle}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="recommend" style="margin:0rpx 20rpx 20rpx 20rpx">
+    <view class="radioTitle">
+      <text>热门歌单</text>
+    </view>
+    <view class="list">
+      <block wx:for="{{songList}}" wx:for-item="item">
+        <view class="radioItem songItem">
+          <view class="cover">
+            <image src="{{item.picUrl}}" mode="widthFix" class="img" />
+            <text class="list-count">{{item.accessnum}}</text>
+          </view>
+          <view class="title">{{item.songListDesc}}</view>
+          <view class="author"><text>{{item.songListAuthor}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

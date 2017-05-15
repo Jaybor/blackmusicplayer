@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/recommend/recommend",
+    "pages/toplist/toplist",
+    "pages/search/search",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#be0b0b",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "selectedColor": "#be0b0b",
+    "borderStyle": "black",
+    "position":"top",
+    "list": [
+      {
+        "pagePath": "pages/recommend/recommend",
+        "text": "推荐"
+      },
+      {
+        "pagePath": "pages/toplist/toplist",
+        "text": "榜单"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索"
+      }
+    ]
+  }
+}
