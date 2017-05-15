@@ -6,18 +6,10 @@ Page({
   data: {
     sliderlist:[],
     radioList:[],
-    songList:[],
-    radioSize:''
+    songList:[]
   },
   onLoad: function () {
     var that = this;
-    wx.getSystemInfo({
-      success: function(res) {
-        that.setData({
-          radioSize:'360rpx'
-        });
-      },
-    })
     api.getRecommend(function(data){
       app.log(data);
       that.setData({
@@ -26,15 +18,5 @@ Page({
         songList:data.data.songList
       });
     });
-    api.getHotSearch(function (data) {
-      app.log(data);
-    });
-    api.getSearchMusic("lady gaga",1,function (data) {
-      app.log(data);
-    });
-    api.getToplist(function (data) {
-      app.log(data);
-    });
-  },
-  
+  }
 })

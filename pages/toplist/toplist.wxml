@@ -1,1 +1,24 @@
-<view>榜单</view>
+<view class="content">
+  <block wx:for="{{topList}}" wx:for-item="item">
+    <view class="topItem" bindtap="goTopListDetail" data-id="{{item}}">
+      <view class="cover">
+        <view class="listmedia">
+          <image src="{{item.picUrl}}" class="img" mode="widthFix" />
+          <view class="list-count">{{item.listenCount}}</view>
+        </view>
+      </view>
+
+      <view class="songlist">
+        <view class="songItemWrapper">
+          <block wx:for="{{item.songList}}" wx:for-item="song" wx:key="{{index}}">
+            <view class="songItem">
+              <view class="singername">{{index+1}}、</view>
+              <view class="singername">{{song.songname}} -</view>
+              <view class="songIntro"> {{song.singername}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
